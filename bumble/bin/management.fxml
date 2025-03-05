@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #f6ca07;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managementController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#343434" height="592.0" layoutX="1048.0" layoutY="16.0" stroke="BLACK" strokeType="INSIDE" width="302.0" />
+      <TableView fx:id="mtable" layoutX="17.0" layoutY="13.0" onMouseClicked="#setCellValueFromTableToTextField" onSort="#createusers" prefHeight="745.0" prefWidth="1017.0">
+        <columns>
+          <TableColumn fx:id="muser" prefWidth="75.0" text="USER_ID" />
+          <TableColumn fx:id="mname" prefWidth="100.0" text="NAME" />
+            <TableColumn fx:id="mday" prefWidth="100.0" text="BIRTHDAY" />
+            <TableColumn fx:id="mage" prefWidth="85.66668701171875" text="AGE" />
+            <TableColumn fx:id="mpass" prefWidth="306.0" text="PASSWORD" />
+            <TableColumn fx:id="memail" prefWidth="213.0" text="EMAIL" />
+            <TableColumn fx:id="mphone" prefWidth="138.0" text="PHONE" />
+        </columns>
+      </TableView>
+      <Label layoutX="1060.0" layoutY="25.0" prefHeight="27.0" prefWidth="77.0" text="NAME" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtname" layoutX="1071.0" layoutY="66.0" prefHeight="35.0" prefWidth="253.0" promptText="Don't use real name" style="-fx-background-color: #ffffff; -fx-border-width: 2pX 2px 2px 2px; -fx-border-color: #ffffff;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="1064.0" layoutY="112.0" prefHeight="35.0" prefWidth="138.0" text="BIRTHDAY" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtbday" layoutX="1073.0" layoutY="152.0" prefHeight="35.0" prefWidth="253.0" promptText="YYYY-MM-DD" style="-fx-background-color: #ffffff; -fx-border-width: 2px 2px 2px 2px; -fx-border-color: #ffffff;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="1066.0" layoutY="205.0" prefHeight="27.0" prefWidth="77.0" text="AGE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtage" layoutX="1071.0" layoutY="244.0" prefHeight="35.0" prefWidth="253.0" style="-fx-background-color: #ffffff; -fx-border-width: 2px 2px 2px 2px; -fx-border-color: #ffffff;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="1071.0" layoutY="293.0" prefHeight="35.0" prefWidth="152.0" text="PASSWORD" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtpass" layoutX="1074.0" layoutY="331.0" prefHeight="35.0" prefWidth="253.0" promptText="Minimum of 8 characters" style="-fx-background-color: #ffffff; -fx-border-width: 2px 2px 2px 2px; -fx-border-color: #ffffff;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="1070.0" layoutY="376.0" prefHeight="35.0" prefWidth="152.0" text="EMAIL" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtemail" layoutX="1075.0" layoutY="418.0" prefHeight="35.0" prefWidth="253.0" style="-fx-background-color: #ffffff; -fx-border-width: 2px 2px 2px 2px; -fx-border-color: #ffffff;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="1069.0" layoutY="469.0" prefHeight="35.0" prefWidth="152.0" text="PHONE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtphone" layoutX="1075.0" layoutY="508.0" prefHeight="35.0" prefWidth="253.0" style="-fx-background-color: #ffffff; -fx-border-width: 2px 2px 2px 2px; -fx-border-color: #ffffff;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="bcre" layoutX="1051.0" layoutY="614.0" mnemonicParsing="false" onAction="#createusers" prefHeight="38.0" prefWidth="301.0" style="-fx-background-color: #4CBB17;" text="CREATE" textFill="#fffbfb">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="beup" layoutX="1051.0" layoutY="660.0" mnemonicParsing="false" onAction="#updateusers" prefHeight="38.0" prefWidth="301.0" style="-fx-background-color: #4682B4;" text="UPDATE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="bde" layoutX="1051.0" layoutY="705.0" mnemonicParsing="false" onAction="#deleteusers" prefHeight="38.0" prefWidth="301.0" style="-fx-background-color: #9A2A2A;" text="DELETE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="mback" layoutX="1304.0" layoutY="575.0" mnemonicParsing="false" onAction="#back2homepage" style="-fx-background-color: ffaa2c;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
